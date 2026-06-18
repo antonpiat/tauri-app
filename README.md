@@ -23,6 +23,7 @@ tauri-app/
 ```
 
 ## Recommended IDE Setup
+- [RustRover](https://www.jetbrains.com/rust/)
 
 - [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
 
