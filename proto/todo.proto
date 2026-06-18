@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package todo;
+
+enum TodoStatus {
+  PENDING = 0;
+  COMPLETED = 1;
+}
+
+message TodoItem {
+  string id = 1;
+  string message = 2;
+  TodoStatus status = 3;
+  optional string created_at = 4;
+  optional string updated_at = 5;
+  string user_id = 6;
+}
+
+message AddTodoItemResponse {
+  TodoItem item = 1;
+  string message = 2;
+  bool success = 3;
+  int32 code = 4;
+}
+
+message GetTodosResponse {
+  repeated TodoItem items = 1;
+  string message = 2;
+  bool success = 3;
+  int32 code = 4;
+}
+
+message GetTodosRequest {
+  optional  string user_id = 1;
+}
+
+message DeleteTodoRequest {
+  string id = 1;
+}
+
+message DeleteTodoResponse {
+  TodoItem items = 1;
+  string message = 2;
+  bool success = 3;
+  int32 code = 4;
+}
+
+service TodoService {
+  rpc AddTodo(TodoItem) returns (AddTodoItemResponse);
+  rpc GetTodos(GetTodosRequest) returns (GetTodosResponse);
+  rpc DeleteTodo(DeleteTodoRequest) returns (DeleteTodoResponse);
+}

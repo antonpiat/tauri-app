@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package common;
+
+message Empty {}
+
+message Uuid {
+  string value = 1;
+}
+
+message String {
+  string value = 1;
+}
